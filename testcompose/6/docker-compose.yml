@@ -1,0 +1,35 @@
+version: "3"
+services: # RabbitMQ EurekaServer ConfigServer zipkin
+  nginx:
+    image: docker.registry.server:5000/nginxdocker
+    ports:
+      - "8999:8999"
+# 使用已有的network 提前用命令创建 docker network create -d overlay --subnet 182.18.0.0/24 --gateway=182.18.0.1 eureka-net
+networks:
+  default:
+    external:
+      name: eureka-net
+#networks:
+#  eureka-net:
+#    driver: overlay
+#    ipam:
+#      config:
+#        - subnet: 182.18.0.0/24
+
+
+# 新建带网段的网络 并使用固定IP
+# 创建网络
+#networks:
+#  eureka-net:
+#    driver: overlay
+#    ipam:
+#      config:
+#        - subnet: 182.18.0.0/24
+# 固定IP配置方式
+#  zipkin:
+#    image: openzipkin/zipkin
+#    networks:
+#      eureka-net:
+#        ipv4_address: 182.18.0.5
+#    ports:
+#      - "9411:9411"

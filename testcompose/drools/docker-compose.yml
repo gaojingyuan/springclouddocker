@@ -1,0 +1,17 @@
+version: "3"
+services:
+  workbench:
+    image: jboss/drools-workbench-showcase
+    depends_on:
+      - kieserver
+    ports:
+      - "8080:8080"
+      - "8001:8001"
+  kieserver:
+    image: jboss/kie-server-showcase
+    ports:
+      - "8180:8080"
+networks:
+  default:
+    external:
+      name: eureka-net
