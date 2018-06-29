@@ -1,9 +1,0 @@
-spring:
-  application:
-    name: eurekaserverdocker
-  profiles:
-    active: eurekaService1
-
-
-
-

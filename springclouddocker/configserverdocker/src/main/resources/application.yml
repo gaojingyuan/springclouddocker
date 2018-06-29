@@ -1,9 +1,0 @@
-spring:
-  application:
-    name: configserverdocker
-  profiles:
-    active: config1
-
-
-
-
