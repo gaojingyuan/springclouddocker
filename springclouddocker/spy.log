@@ -1,0 +1,10 @@
+1527493506426|3|statement|connection 0|/* ping */ SELECT 1|/* ping */ SELECT 1
+1527493535534|3|statement|connection 0|SELECT id,nickName,passwd,roleId,userId,mobile,idCard,trueName,departmentId,accountType,status,auditingNum,audit,accessToken,tokenValidTime  FROM staff|SELECT id,nickName,passwd,roleId,userId,mobile,idCard,trueName,departmentId,accountType,status,auditingNum,audit,accessToken,tokenValidTime  FROM staff
+1529483193652|4|statement|connection 0|/* ping */ SELECT 1|/* ping */ SELECT 1
+1529483349409|4|statement|connection 0|/* ping */ SELECT 1|/* ping */ SELECT 1
+1530188121367|5|statement|connection 0|/* ping */ SELECT 1|/* ping */ SELECT 1
+1530188342470|5|statement|connection 0|/* ping */ SELECT 1|/* ping */ SELECT 1
+1530188564920|5|statement|connection 0|/* ping */ SELECT 1|/* ping */ SELECT 1
+1530188592327|5|statement|connection 0|/* ping */ SELECT 1|/* ping */ SELECT 1
+1530188938076|4|statement|connection 0|/* ping */ SELECT 1|/* ping */ SELECT 1
+1530189491940|4|statement|connection 0|/* ping */ SELECT 1|/* ping */ SELECT 1

@@ -1,0 +1,138 @@
+version: "3"
+services: # RabbitMQ EurekaServer ConfigServer zipkin
+  rabbit1:
+    image: bijukunjummen/rabbitmq-server:3.7.0
+    networks:
+      - eureka-net
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      - RABBITMQ_DEFAULT_USER=myuser
+      - RABBITMQ_DEFAULT_PASS=mypass
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+#  rabbit2:
+#    image: bijukunjummen/rabbitmq-server:3.7.0
+#    ports:
+#      - "5673:5672"
+#      - "15673:15672"
+#    environment:
+#      - CLUSTERED=true
+#      - CLUSTER_WITH=rabbit1
+#      - RAM_NODE=true
+#    logging:
+#      options:
+#        max-size: "10m"
+#        max-file: "10"
+#  rabbit3:
+#    image: bijukunjummen/rabbitmq-server:3.7.0
+#    ports:
+#      - "5674:5672"
+#      - "15674:15672"
+#    environment:
+#      - CLUSTERED=true
+#      - CLUSTER_WITH=rabbit1
+#    logging:
+#      options:
+#        max-size: "10m"
+#        max-file: "10"
+#  eurekaService1:      # eureka server
+#    image: docker.registry.server:5000/eurekaserverdocker
+#    networks:
+#      - eureka-net
+#    ports:
+#      - "8888:8888"
+#    environment:
+#      - spring.profiles.active=eurekaService1
+#    logging:
+#      options:
+#        max-size: "10m"
+#        max-file: "10"
+#  eurekaService2:
+#    image: docker.registry.server:5000/eurekaserverdocker
+#    ports:
+#      - "8887:8887"
+#    environment:
+#      - spring.profiles.active=eurekaService2
+#    logging:
+#      options:
+#        max-size: "10m"
+#        max-file: "10"
+#  eurekaService3:
+#    image: docker.registry.server:5000/eurekaserverdocker
+#    ports:
+#      - "8886:8886"
+#    environment:
+#      - spring.profiles.active=eurekaService3
+#    logging:
+#      options:
+#        max-size: "10m"
+#        max-file: "10"
+#  config1:      # config server
+#    image: docker.registry.server:5000/configserverdocker
+#    networks:
+#      - eureka-net
+#    ports:
+#      - "8866:8866"
+#    environment:
+#      - spring.profiles.active=config1
+#    logging:
+#      options:
+#        max-size: "10m"
+#        max-file: "10"
+#  config2:
+#    image: docker.registry.server:5000/configserverdocker
+#    ports:
+#      - "8865:8865"
+#    environment:
+#      - spring.profiles.active=config2
+#    logging:
+#      options:
+#        max-size: "10m"
+#        max-file: "10"
+#  config3:
+#    image: docker.registry.server:5000/configserverdocker
+#    ports:
+#      - "8864:8864"
+#    environment:
+#      - spring.profiles.active=config3
+#    logging:
+#      options:
+#        max-size: "10m"
+#        max-file: "10"
+#  zipkin:
+#    image: openzipkin/zipkin
+#    ports:
+#      - "9411:9411"
+# 使用已有的network 提前用命令创建 docker network create -d overlay --subnet 182.18.0.0/24 --gateway=182.18.0.1 eureka-net
+#networks:
+#  default:
+#    external:
+#      name: eureka-net
+networks:
+  eureka-net:
+    driver: overlay
+    ipam:
+      config:
+        - subnet: 182.18.0.0/24
+
+
+# 新建带网段的网络 并使用固定IP
+# 创建网络
+#networks:
+#  eureka-net:
+#    driver: overlay
+#    ipam:
+#      config:
+#        - subnet: 182.18.0.0/24
+# 固定IP配置方式
+#  zipkin:
+#    image: openzipkin/zipkin
+#    networks:
+#      eureka-net:
+#        ipv4_address: 182.18.0.5
+#    ports:
+#      - "9411:9411"

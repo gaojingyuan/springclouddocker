@@ -1,0 +1,38 @@
+version: "3"
+services:
+  modulea:
+    image: docker.registry.server:5000/eurekaclientdockera
+    ports:
+      - "8001:8001"
+#    deploy:
+#      replicas: 3
+#      resources:
+#        limits:
+#          cpus: "0.5"
+#          memory: 200M
+#      restart_policy:
+#        condition: on-failure
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+  moduleb:
+    image: docker.registry.server:5000/eurekaclientdockerb
+    ports:
+      - "8002:8002"
+#    deploy:
+#      replicas: 3
+#      resources:
+#        limits:
+#          cpus: "0.5"
+#          memory: 200M
+#      restart_policy:
+#        condition: on-failure
+    logging:
+     options:
+       max-size: "10m"
+       max-file: "10"
+networks:
+  default:
+    external:
+      name: 3_eureka-net

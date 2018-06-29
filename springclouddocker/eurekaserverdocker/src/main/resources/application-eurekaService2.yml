@@ -1,0 +1,11 @@
+spring:
+  profiles: eurekaService2
+server:
+  port: 8887
+eureka:
+  instance:
+    hostname: eurekaService2 # 指定该Eureka实例的主机名
+    preferIpAddress: true
+  client:
+    serviceUrl:    #多个地址使用 , 分隔。
+      defaultZone: http://eurekaService1:8888/eureka/,http://eurekaService3:8886/eureka/

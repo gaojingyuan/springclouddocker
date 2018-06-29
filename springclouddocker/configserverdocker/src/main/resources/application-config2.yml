@@ -1,0 +1,35 @@
+eurekaService:
+  service1: eurekaService1
+  service2: eurekaService2
+  service3: eurekaService3
+spring:
+  application:
+    name: configserverdocker
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/gaojingyuan/springcloud
+          searchPaths: config
+          username:
+          password:
+      label: master
+  rabbitmq:
+    host: rabbit1
+    port: 5672
+    username: myuser
+    password: mypass
+server:
+  port: 8865
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: http://${eurekaService.service1}:8888/eureka/,http://${eurekaService.service2}:8887/eureka/,http://${eurekaService.service3}:8886/eureka/
+# https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-Security-2.0
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
