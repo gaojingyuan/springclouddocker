@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.core.Ordered;
+import org.springframework.core.io.buffer.DataBuffer;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.server.RequestPath;
@@ -65,10 +66,10 @@ public class GlobalCheckFilter implements GlobalFilter, Ordered {
         httpHeaders.add("Content-Type", "application/json; charset=UTF-8");
         httpHeaders.add("X-Content-Type-Options", "");
 
-//        if (null == userName || null == pwd) {
-//            DataBuffer bodyDataBuffer = response.bufferFactory().wrap("global wrong".getBytes());
-//            return response.writeWith(Mono.just(bodyDataBuffer));
-//        }
+        if (null == userName || null == pwd) {
+            DataBuffer bodyDataBuffer = response.bufferFactory().wrap("global wrong".getBytes());
+            return response.writeWith(Mono.just(bodyDataBuffer));
+        }
         return chain.filter(exchange);
     }
 
