@@ -28,9 +28,9 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driverClassName: com.p6spy.engine.spy.P6SpyDriver
-    url: jdbc:p6spy:mysql://192.168.1.76:3306/springclouddocker?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    url: jdbc:p6spy:mysql://47.95.20.117:3306/springclouddocker?useUnicode=true&characterEncoding=utf-8&useSSL=false
     username: root
-    password: Dgsmy111828
+    password: Wallet170802
     # 下面为连接池的补充设置，应用到上面所有数据源中
     # 初始化大小，最小，最  大
     initialSize: 5
