@@ -105,6 +105,8 @@ services: # RabbitMQ EurekaServer ConfigServer zipkin
     image: docker.registry.server:5000/gatewaydocker
     ports:
       - "9000:9000"
+    environment:
+      - spring.profiles.active=dev
     logging:
      options:
        max-size: "10m"

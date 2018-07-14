@@ -8,3 +8,6 @@
 1530188592327|5|statement|connection 0|/* ping */ SELECT 1|/* ping */ SELECT 1
 1530188938076|4|statement|connection 0|/* ping */ SELECT 1|/* ping */ SELECT 1
 1530189491940|4|statement|connection 0|/* ping */ SELECT 1|/* ping */ SELECT 1
+1531545475793|3|statement|connection 0|/* ping */ SELECT 1|/* ping */ SELECT 1
+1531545598475|2|statement|connection 0|/* ping */ SELECT 1|/* ping */ SELECT 1
+1531545712568|2|statement|connection 0|/* ping */ SELECT 1|/* ping */ SELECT 1
