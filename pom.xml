@@ -11,4 +11,12 @@
     <name>springclouddocker</name>
     <description>Spring Cloud Docker</description>
 
+    <modules>
+        <module>eurekaserverdocker</module>
+        <module>configserverdocker</module>
+        <module>gatewaydocker</module>
+        <module>eurekaclientdockera</module>
+        <module>eurekaclientdockerb</module>
+    </modules>
+
 </project>

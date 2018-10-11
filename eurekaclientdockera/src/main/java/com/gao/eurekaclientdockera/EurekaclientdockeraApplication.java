@@ -37,7 +37,7 @@ public class EurekaclientdockeraApplication {
 
     @RequestMapping(value = "/getConf",method = RequestMethod.GET)
     public String getConf() {
-        return "a"+project;
+        return project;
     }
 
     @RequestMapping(value = "/getHost",method = RequestMethod.GET)

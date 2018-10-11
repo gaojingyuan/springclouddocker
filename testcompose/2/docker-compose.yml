@@ -1,11 +1,11 @@
 version: "3"
 services:
   modulea:
-    image: docker.registry.server:5000/eurekaclientdockera
+    image: docker.registry.server:5000/eurekaclientdockera:0.0.2-SNAPSHOT
     ports:
       - "8001:8001"
     environment:
-      - spring.profiles.active=dev
+      - spring.profiles.active=test
 #    deploy:
 #      replicas: 2
 #      resources:

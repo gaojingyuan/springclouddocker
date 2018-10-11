@@ -96,6 +96,7 @@
                     <!--<dockerDirectory>docker</dockerDirectory>-->
                     <baseImage>openjdk:8u131-jdk-alpine</baseImage>
                     <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
+                    <cmd>["echo", ""Asia/shanghai" > /etc/timezone"]</cmd>
 
                     <resources>
                         <resource>

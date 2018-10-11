@@ -106,7 +106,7 @@ services: # RabbitMQ EurekaServer ConfigServer zipkin
     ports:
       - "9000:9000"
     environment:
-      - spring.profiles.active=dev
+      - spring.profiles.active=test
     logging:
      options:
        max-size: "10m"

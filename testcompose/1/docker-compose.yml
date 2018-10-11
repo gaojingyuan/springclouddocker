@@ -101,7 +101,8 @@ services: # RabbitMQ EurekaServer ConfigServer zipkin
 #    image: openzipkin/zipkin
 #    ports:
 #      - "9411:9411"
-# 使用已有的network 提前用命令创建 docker network create -d overlay --subnet 182.18.0.0/24 --gateway=182.18.0.1 eureka-net
+# 使用已有的network 提前用命令创建 docker network create -d overlay eureka-net
+# docker network create -d overlay --subnet 182.18.0.0/24 --gateway=182.18.0.1 eureka-net
 networks:
   default:
     external:
